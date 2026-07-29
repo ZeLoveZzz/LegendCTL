@@ -1,4 +1,4 @@
-"""Shared controller-diagram geometry for the LegendCTL UI."""
+"""Shared controller-diagram geometry for the ZZ-ZD UI."""
 
 from __future__ import annotations
 

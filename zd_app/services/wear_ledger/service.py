@@ -96,7 +96,7 @@ class WearLedgerService:
         # negative ``rotation_bytes`` configuration can't thrash the disk
         # rotating after every write.
         self._rotation_bytes = max(256, int(rotation_bytes))
-        # This is deliberately process-local. LegendCTL is a single-window GUI
+        # This is deliberately process-local. ZZ-ZD is a single-window GUI
         # app, so one process serializes normal ledger writes. Separate GUI
         # processes could still race a rotation; that is an accepted best-effort
         # limitation for this non-authoritative wear log.
@@ -207,7 +207,7 @@ class WearLedgerService:
         resolved by appending a suffix counter.
 
         Call only while ``_write_lock`` is held by :meth:`_write_line`. That
-        lock is process-local: this rotation relies on LegendCTL's single-GUI-
+        lock is process-local: this rotation relies on ZZ-ZD's single-GUI-
         process assumption, and separate processes can still race here. The
         wear ledger is non-authoritative, so that is an accepted best-effort
         limitation rather than an interprocess-lock contract.

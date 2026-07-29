@@ -63,7 +63,7 @@ _FIRST_RUN_KEYS = (
 _LOCALES_DIR = Path("zd_app/i18n/locales")
 _REVISED_COPY = {
     "en": {
-        "first_run.intro": "LegendCTL is an unofficial, community-made tool for the ZD Ultimate Legend controller.",
+        "first_run.intro": "ZZ-ZD is an unofficial, community-made tool for the ZD Ultimate Legend controller.",
         "first_run.fact.reads": "Reads controller state locally on this PC.",
         "first_run.fact.writes": "Writes controller settings only when you act — using Apply, or live controls it labels as writing immediately.",
         "first_run.pending_write_blocked": "Accept the first-run notice before changing controller settings. Reading and verifying stay open.",
@@ -71,7 +71,7 @@ _REVISED_COPY = {
         "first_run.verify_link": "How to verify this",
     },
     "zh-CN": {
-        "first_run.intro": "LegendCTL 是一款非官方的、由社区制作的 ZD Ultimate Legend 手柄工具。",
+        "first_run.intro": "ZZ-ZD 是一款非官方的、由社区制作的 ZD Ultimate Legend 手柄工具。",
         "first_run.fact.reads": "仅在本机读取手柄状态。",
         "first_run.fact.writes": "仅在你操作时才写入手柄设置——通过“应用”，或标注为即时写入的实时控件。",
         "first_run.pending_write_blocked": "更改手柄设置前请先接受首次运行须知。读取与验证功能不受影响。",

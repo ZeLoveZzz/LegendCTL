@@ -30,8 +30,8 @@ _CONTENT_MAX_WIDTH = 720
 # Repo + issue-tracker URLs. Buttons render only when their URL is non-None.
 # LICENSE_URL stays None: the Licenses button opens the in-app license modal,
 # not a URL.
-REPO_URL: Optional[str] = "https://github.com/EvilHumphrey/LegendCTL"
-ISSUE_URL: Optional[str] = "https://github.com/EvilHumphrey/LegendCTL/issues"
+REPO_URL: Optional[str] = "https://github.com/ZeLoveZzz/ZZ-ZD"
+ISSUE_URL: Optional[str] = "https://github.com/ZeLoveZzz/ZZ-ZD/issues"
 LICENSE_URL: Optional[str] = None
 
 

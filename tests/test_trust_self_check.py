@@ -58,7 +58,7 @@ class TrustSelfCheckEvidenceTests(unittest.TestCase):
         markdown = result.to_markdown()
         self.assertIn("Static scan of zd_app + main_zd.py", markdown)
         self.assertIn("webbrowser.open", markdown)
-        self.assertIn("not LegendCTL telemetry", markdown)
+        self.assertIn("not ZZ-ZD telemetry", markdown)
 
     def test_unreadable_root_fails_closed_without_clean_claims(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

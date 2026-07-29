@@ -99,7 +99,7 @@ _DRAG_HANDLE_MARKER_SIZE = 6.0
 # six BACK-side macro slots so a user can SEE which physical paddle is "M1" vs
 # "M2", etc. — the slot names alone aren't intuitive. Pure UI: NO device I/O,
 # no snapshot dependency. The highlight reflects the back-paddle ROW the user
-# is touching, NEVER a device read (LegendCTL can't read the device's real
+# is touching, NEVER a device read (ZZ-ZD can't read the device's real
 # paddle state — cf. the section's cannot_read note + honest-abstention work).
 # Drawlist precedent: about.py (radar mark) + live_verify.py (circularity plot,
 # the tag + configure_item live-recolor model this reuses).
@@ -963,7 +963,7 @@ def _apply_current_binding_target_state(shell, slot: ButtonSlot, mapping) -> Non
 
     _show_tip(False)
     if mapping.target_kind != 0x01 or mapping.target_low != 0x00:
-        # Read succeeded, but this slot holds a mapping KIND LegendCTL doesn't
+        # Read succeeded, but this slot holds a mapping KIND ZZ-ZD doesn't
         # model — a keyboard / macro / vendor kind set by the official app or a
         # future firmware. Its target_value byte can collide with a controller-
         # button value (B == 0x10 == ButtonMapping's default), so naming it would
@@ -1008,12 +1008,12 @@ def _render_back_paddles_section(shell) -> None:
     section_title(t("controller.back_paddles.title"))
     dpg.add_text(t("controller.back_paddles.subtitle"), color=shell.COLORS["muted"], wrap=680)
     dpg.add_spacer(height=4)
-    # The key honest-display reframe: LegendCTL has NO read path for the
+    # The key honest-display reframe: ZZ-ZD has NO read path for the
     # controller's existing paddle/macro state (get_all_back_paddle_bindings()
-    # returns {}), so a row with no LegendCTL value must NEVER imply the device
+    # returns {}), so a row with no ZZ-ZD value must NEVER imply the device
     # paddle is empty. This note states what we can't see, and that Apply
     # OVERWRITES whatever is on the paddle — including a macro set elsewhere,
-    # which LegendCTL deliberately doesn't read or support. warn-coloured because
+    # which ZZ-ZD deliberately doesn't read or support. warn-coloured because
     # it carries the destructive-overwrite caution, not just neutral context.
     dpg.add_text(
         t("controller.back_paddles.cannot_read_note"),
@@ -1059,7 +1059,7 @@ def _render_back_paddles_section(shell) -> None:
 
     for slot in MacroSlot:
         binding = bindings.get(slot)
-        # Slot ABSENT from the snapshot => no LegendCTL-set value this session,
+        # Slot ABSENT from the snapshot => no ZZ-ZD-set value this session,
         # and we can't read the device's real paddle state. Show an honest
         # placeholder, NOT "Unbound" (which would falsely claim the device paddle
         # is empty). "Unbound" stays in the dropdown as an explicit clear ACTION;
@@ -1128,7 +1128,7 @@ def _render_controller_diagram_panel(shell) -> None:
     hotspot in place via ``configure_item`` — the same proven live-refresh model
     as ``_apply_current_binding_target_state`` and the live_verify circularity
     plot — and reflects the back-paddle ROW the user is touching, never a device
-    read (LegendCTL can't read the device's real paddle state). An always-on
+    read (ZZ-ZD can't read the device's real paddle state). An always-on
     honest note states exactly that; any slot whose drawn position is the most
     schematic (``_BACK_PADDLE_APPROX``) gets a "*" marker + the approx caption.
     """
@@ -1262,7 +1262,7 @@ def _render_profiles_tab(shell) -> None:
     profiles = shell.list_wrapper_profiles()
     section_title(t("controller.profiles.title"))
     dpg.add_text(t("controller.profiles.subtitle"), color=shell.COLORS["muted"], wrap=700)
-    # Disambiguate the two profile namespaces: this tab lists LegendCTL-LOCAL
+    # Disambiguate the two profile namespaces: this tab lists ZZ-ZD-LOCAL
     # profiles (real names, stored on this PC); the controller's four on-device
     # slots are positional "Profile 1-4" whose names we can't read. Never let a
     # user read a local profile as living on the device, or vice versa.

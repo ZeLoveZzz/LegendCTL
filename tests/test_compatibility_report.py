@@ -85,7 +85,7 @@ class CompatibilityReportRendererTests(unittest.TestCase):
 
         text = report.to_markdown()
         for expected in (
-            "LegendCTL version",
+            "ZZ-ZD version",
             "Build commit",
             "Windows 11 test build",
             r"USB\\VID_413D&PID_2104",
@@ -236,7 +236,7 @@ class CompatibilityReportRendererTests(unittest.TestCase):
 
         body = build_compatibility_report(now=_NOW).to_issue_body()
         for label in (
-            "LegendCTL / app version",
+            "ZZ-ZD / app version",
             "Windows version",
             "Controller VID/PID + variant + firmware",
             "Overall result",

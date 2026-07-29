@@ -115,7 +115,7 @@ class I18nTests(unittest.TestCase):
                     "folder, then try again."
                 ),
                 "restore_points.list.empty_state": (
-                    "No restore points yet. LegendCTL tries to create one automatically before "
+                    "No restore points yet. ZZ-ZD tries to create one automatically before "
                     "higher-risk controller changes, and you can save one manually after reading "
                     "the controller. They capture app-supported settings only; they are not "
                     "factory backups."
